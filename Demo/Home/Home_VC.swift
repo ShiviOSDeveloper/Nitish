@@ -10,6 +10,7 @@ import UIKit
 
 class Home_VC:UIViewController {
 
+    @IBOutlet weak var collVwHome: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

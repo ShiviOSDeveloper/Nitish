@@ -19,6 +19,8 @@
 		772ED98022319A3F00D0E4D4 /* Menu_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772ED97F22319A3F00D0E4D4 /* Menu_VC.swift */; };
 		779A49732232EEE1002AEAA3 /* ForgotPwd_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A49722232EEE1002AEAA3 /* ForgotPwd_VC.swift */; };
 		77C9A3772232AF9E00C65C0C /* Login_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C9A3762232AF9E00C65C0C /* Login_VC.swift */; };
+		77DF53DB2233F109007583FD /* SignUP_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF53DA2233F109007583FD /* SignUP_VC.swift */; };
+		77DF53DD22344771007583FD /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF53DC22344771007583FD /* HomeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		772ED97F22319A3F00D0E4D4 /* Menu_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_VC.swift; sourceTree = "<group>"; };
 		779A49722232EEE1002AEAA3 /* ForgotPwd_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwd_VC.swift; sourceTree = "<group>"; };
 		77C9A3762232AF9E00C65C0C /* Login_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_VC.swift; sourceTree = "<group>"; };
+		77DF53DA2233F109007583FD /* SignUP_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUP_VC.swift; sourceTree = "<group>"; };
+		77DF53DC22344771007583FD /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				772ED97222318BCA00D0E4D4 /* Home_VC.swift */,
+				77DF53DC22344771007583FD /* HomeCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			children = (
 				77C9A3762232AF9E00C65C0C /* Login_VC.swift */,
 				779A49722232EEE1002AEAA3 /* ForgotPwd_VC.swift */,
+				77DF53DA2233F109007583FD /* SignUP_VC.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -295,12 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DF53DB2233F109007583FD /* SignUP_VC.swift in Sources */,
 				772ED97322318BCA00D0E4D4 /* Home_VC.swift in Sources */,
 				772ED9442231764A00D0E4D4 /* Demo.xcdatamodeld in Sources */,
 				77C9A3772232AF9E00C65C0C /* Login_VC.swift in Sources */,
 				772ED98022319A3F00D0E4D4 /* Menu_VC.swift in Sources */,
 				779A49732232EEE1002AEAA3 /* ForgotPwd_VC.swift in Sources */,
 				772ED93E2231764A00D0E4D4 /* ViewController.swift in Sources */,
+				77DF53DD22344771007583FD /* HomeCell.swift in Sources */,
 				772ED93C2231764A00D0E4D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
