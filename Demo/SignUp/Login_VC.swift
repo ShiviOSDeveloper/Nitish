@@ -8,15 +8,83 @@
 
 import UIKit
 
-class Login_VC: UIViewController {
+class Login_VC: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var txtFldPwd: UITextField!
+    @IBOutlet weak var txtFldUserName: UITextField!
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnForgotPwd: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        self.txtFldUserName.delegate = self
+        self.txtFldPwd.delegate = self
+        
+        self.txtFldUserName.setBottomBorder()
+        self.txtFldPwd.setBottomBorder()
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func login(_ sender: Any)
+    {
+        if (self.txtFldUserName.text?.isEmpty)!
+        {
+            self.alert(message: "Enter user name", title: "Oops")
+        }
+        else if(self.txtFldPwd.text?.isEmpty)!
+        {
+             self.alert(message: "Enter password", title: "Oops")
+        }
+        else
+        {
+            
+        }
+    }
+    
+    
+    @IBAction func forgotPwd(_ sender: Any)
+    {
+    }
+    
+    
+    func animateTextField(textField: UITextField, up: Bool)
+    {
+    let movementDistance:CGFloat = -130
+    let movementDuration: Double = 0.3
+    
+    var movement:CGFloat = 0
+    if up
+    {
+    movement = movementDistance
+    }
+    else
+    {
+    movement = -movementDistance
+    }
+    UIView.beginAnimations("animateTextField", context: nil)
+    UIView.setAnimationBeginsFromCurrentState(true)
+    UIView.setAnimationDuration(movementDuration)
+    self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+    UIView.commitAnimations()
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        self.animateTextField(textField: textField, up:true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        self.animateTextField(textField: textField, up:false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +95,38 @@ class Login_VC: UIViewController {
     }
     */
 
+}
+
+extension UITextField {
+    func setBottomBorder() {
+        self.borderStyle = UITextField.BorderStyle.none
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = UIColor.gray.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width,   width:  self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+}
+
+
+// MARK: - Initializers
+
+extension UIViewController {
+    
+    func alert(message: String, title: String ) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+}
+
+extension String {
+    func isValidEmail() -> Bool {
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    }
 }
