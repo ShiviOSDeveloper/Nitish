@@ -10,4 +10,10 @@ import UIKit
 
 class HomeCell: UICollectionViewCell {
     
+    @IBOutlet weak var imgBookingType: UIImageView!
+    @IBOutlet weak var imgSmallType: UIImageView!
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblOff: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
 }
