@@ -21,8 +21,9 @@ class Login_VC: UIViewController,UITextFieldDelegate {
         self.txtFldUserName.delegate = self
         self.txtFldPwd.delegate = self
         
-        self.txtFldUserName.setBottomBorder()
-        self.txtFldPwd.setBottomBorder()
+        self.SetLeftSIDEImage(TextField: self.txtFldUserName, ImageName: "user_icon")
+        self.SetLeftSIDEImage(TextField: self.txtFldPwd, ImageName: "password")
+        
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +49,10 @@ class Login_VC: UIViewController,UITextFieldDelegate {
     {
     }
     
+    @IBAction func BtnSignUp(_ sender: Any)
+    {
+        
+    }
     
     func animateTextField(textField: UITextField, up: Bool)
     {
@@ -85,6 +90,28 @@ class Login_VC: UIViewController,UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    func SetLeftSIDEImage(TextField: UITextField, ImageName: String){
+        
+        let leftImageView = UIImageView()
+        leftImageView.contentMode = .scaleAspectFit
+        
+        let leftView = UIView()
+        
+        leftView.frame = CGRect(x: 5, y: 0, width: 30, height: 20)
+        leftImageView.frame = CGRect(x: 5, y: 0, width: 20, height: 20)
+        TextField.leftViewMode = .always
+        TextField.leftView = leftView
+        
+        let image = UIImage(named: ImageName)?.withRenderingMode(.alwaysTemplate)
+        leftImageView.image = image
+        leftImageView.tintColor = UIColor.white
+        leftImageView.tintColorDidChange()
+        
+        leftView.addSubview(leftImageView)
+    }
+   
     /*
     // MARK: - Navigation
 
@@ -102,7 +129,7 @@ extension UITextField {
         self.borderStyle = UITextField.BorderStyle.none
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = UIColor.gray.cgColor
+        border.borderColor = UIColor.white.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width,   width:  self.frame.size.width, height: self.frame.size.height)
         border.borderWidth = width
         self.layer.addSublayer(border)
