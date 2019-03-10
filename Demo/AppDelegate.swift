@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         UINavigationBar.appearance().barStyle = .blackOpaque
+        UINavigationBar.appearance().barStyle = .blackOpaque
 
 //
         return true
