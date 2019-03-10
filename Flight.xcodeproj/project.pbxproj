@@ -381,7 +381,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Flight/Pods-Flight-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Flight/Pods-Flight-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Koyomi/Koyomi.framework",
 			);
@@ -392,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flight/Pods-Flight-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flight/Pods-Flight-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		17E8FC02FFF473F286262A76 /* [CP] Check Pods Manifest.lock */ = {
