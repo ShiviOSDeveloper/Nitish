@@ -8,15 +8,40 @@
 
 import UIKit
 
-class MyPlans_VC: UIViewController {
-
+class MyPlans_VC: UIViewController,UITableViewDataSource,UITableViewDelegate
+{
+   
+    
+    @IBOutlet weak var tblMyPlans: UITableView!
+    
+    let MyPlans = ["Home","Packages", "Seight Seeing","Hotels","Events","Profile","Contacts Us"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         tblMyPlans.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MyPlans.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        
+        
+        let cell:UITableViewCell?  = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        cell!.textLabel?.text = self.MyPlans[indexPath.row]
+        
+        return cell!
+    }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if self.MyPlans[indexPath.row] == "Home"
+        {
+            tabBarController!.selectedIndex = 0
+        }
+    }
     /*
     // MARK: - Navigation
 
