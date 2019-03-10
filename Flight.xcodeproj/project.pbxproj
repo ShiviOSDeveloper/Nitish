@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		10FDC943DE27C215D3EF986A /* Pods_FlightUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CAF890209814CDCCDC9DDC /* Pods_FlightUITests.framework */; };
 		1D17F3544A98039D9A1C0ACD /* Pods_FlightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBFEB3C7C1EC51FA89018C9 /* Pods_FlightTests.framework */; };
+		58C6A40F223572FC00C9744E /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */; };
+		58C6A4112235738600C9744E /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A4102235738600C9744E /* FlightSearchModel.swift */; };
+		58C6A4152235740400C9744E /* FlightSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A4142235740400C9744E /* FlightSearchView.swift */; };
 		7704CD31223546D7000AFCE3 /* MyPlans_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD30223546D7000AFCE3 /* MyPlans_VC.swift */; };
 		7704CD332235473B000AFCE3 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD322235473B000AFCE3 /* MenuCell.swift */; };
 		7704CD3822355426000AFCE3 /* HotelSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3522355426000AFCE3 /* HotelSearchModel.swift */; };
@@ -52,6 +55,9 @@
 /* Begin PBXFileReference section */
 		32DBAA1917875D712049948A /* Pods-FlightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightTests/Pods-FlightTests.release.xcconfig"; sourceTree = "<group>"; };
 		3803921BF7DAC137A273E681 /* Pods-FlightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightUITests/Pods-FlightUITests.release.xcconfig"; sourceTree = "<group>"; };
+		58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
+		58C6A4102235738600C9744E /* FlightSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
+		58C6A4142235740400C9744E /* FlightSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchView.swift; sourceTree = "<group>"; };
 		7704CD30223546D7000AFCE3 /* MyPlans_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlans_VC.swift; sourceTree = "<group>"; };
 		7704CD322235473B000AFCE3 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		7704CD3522355426000AFCE3 /* HotelSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchModel.swift; sourceTree = "<group>"; };
@@ -138,6 +144,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		58C6A40D223572DE00C9744E /* FlightSearch */ = {
+			isa = PBXGroup;
+			children = (
+				58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */,
+				58C6A4102235738600C9744E /* FlightSearchModel.swift */,
+				58C6A4142235740400C9744E /* FlightSearchView.swift */,
+			);
+			path = FlightSearch;
+			sourceTree = "<group>";
+		};
 		7704CD2F223545DD000AFCE3 /* MyPlans */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +198,7 @@
 		772ED93A2231764A00D0E4D4 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				58C6A40D223572DE00C9744E /* FlightSearch */,
 				7704CD342235540E000AFCE3 /* SearchHotel */,
 				7704CD2F223545DD000AFCE3 /* MyPlans */,
 				77C9A3752232AF8300C65C0C /* SignUp */,
@@ -456,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C6A4152235740400C9744E /* FlightSearchView.swift in Sources */,
 				7704CD3C22355574000AFCE3 /* CalanderViewController.swift in Sources */,
 				7704CD3922355426000AFCE3 /* HotelSearchViewController.swift in Sources */,
 				7704CD3822355426000AFCE3 /* HotelSearchModel.swift in Sources */,
@@ -467,7 +485,9 @@
 				772ED98022319A3F00D0E4D4 /* Menu_VC.swift in Sources */,
 				7704CD332235473B000AFCE3 /* MenuCell.swift in Sources */,
 				779A49732232EEE1002AEAA3 /* ForgotPwd_VC.swift in Sources */,
+				58C6A4112235738600C9744E /* FlightSearchModel.swift in Sources */,
 				772ED93E2231764A00D0E4D4 /* ViewController.swift in Sources */,
+				58C6A40F223572FC00C9744E /* FlightSearchViewController.swift in Sources */,
 				77DF53DD22344771007583FD /* HomeCell.swift in Sources */,
 				772ED93C2231764A00D0E4D4 /* AppDelegate.swift in Sources */,
 				7704CD31223546D7000AFCE3 /* MyPlans_VC.swift in Sources */,

@@ -25,32 +25,36 @@ class CalanderViewController: UIViewController,KoyomiDelegate {
         
         koyomi.calendarDelegate = self
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         switch isfrom {
         case "checkIn":
-            
-           
             let date = formatter.date(from: Hotel_SearchModel.checkIn)
             koyomi.select(date: date!)
-
-            
             break
         case "checkOut":
             let date = formatter.date(from: Hotel_SearchModel.checkOut)
+            koyomi.select(date: date!)
+            break
+        case "departure":
+            let date = formatter.date(from: Flight_SearchModel.departureDate)
+            koyomi.select(date: date!)
+            break
+        case "return":
+            let date = formatter.date(from: Flight_SearchModel.returnDate)
             koyomi.select(date: date!)
             break
         default: break
             
             
         }
-
+        self.title = "Calander"
     }
     
     func koyomi(_ koyomi: Koyomi, didSelect date: Date?, forItemAt indexPath: IndexPath)
     {
         print(date ?? "")
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         let myString = formatter.string(from:date!)
         switch isfrom {
         case "checkIn":
@@ -60,6 +64,15 @@ class CalanderViewController: UIViewController,KoyomiDelegate {
         break
         case "checkOut":
             Hotel_SearchModel.checkOut = myString
+            self.navigationController?.popViewController(animated: false)
+            break
+        case "departure":
+            Flight_SearchModel.departureDate = myString
+            self.navigationController?.popViewController(animated: false)
+            
+            break
+        case "return":
+            Flight_SearchModel.returnDate = myString
             self.navigationController?.popViewController(animated: false)
             break
         default: break
