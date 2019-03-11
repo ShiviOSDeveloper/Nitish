@@ -8,17 +8,21 @@
 
 import UIKit
 
-class HotelSearchModel {
+class FlightSearchModel {
     
-    var searchTitle:String!
-    var checkIn:String!
-    var checkOut:String!
+    var departure:String!
+    var destination:String!
+    var departureDate:String!
+    var returnDate:String!
+
+    var traveller:String!
+    var travellerClass:String!
   
     init() {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         let myString = formatter.string(from:Date())
-       checkIn = myString
-       checkOut = myString
+       departureDate = myString
+       returnDate = myString
     }
 }
