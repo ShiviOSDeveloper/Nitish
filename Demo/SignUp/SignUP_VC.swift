@@ -39,7 +39,7 @@ class SignUP_VC: UIViewController,UITextFieldDelegate {
         }
         else
         {
-            if ((self.txtEmail.text?.isValidEmail())!)
+            if (!(self.txtEmail.text?.isValidEmail())!)
             {
                  self.alert(message: "Enter valid email id ", title: "oops")
             }
@@ -48,13 +48,21 @@ class SignUP_VC: UIViewController,UITextFieldDelegate {
           {
                 self.alert(message: "Enter passowrd", title: "oops")
           }
-            else if(self.txtPwd.text!==self.txtConfirmPwd.text!)
+            else if(self.txtPwd.text! != self.txtConfirmPwd.text!)
             {
                 self.alert(message: "password do not match", title: "oops")
             }
             else
             {
-                //here webservice
+                let strURL = baseUrl + CreateuserUrl+"?" + "username=\(txtUserName.text!)&Email=\(txtEmail.text!)&password=\(txtPwd.text!)"
+                let header = ["Content-Type":"application/json; charset=utf-8"]
+                AFWrapper.requestPOSTURL(strURL, params: nil , headers: header , success:  {
+                    (JSONResponse) -> Void in
+                    print(JSONResponse)
+                }) {
+                    (error) -> Void in
+                    print(error)
+                }
             }
         }
         

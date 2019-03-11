@@ -3,7 +3,6 @@ set -e
 set -u
 set -o pipefail
 
-<<<<<<< HEAD
 function on_error {
   echo "$(realpath -mq "${0}"):$1: error: Unexpected failure"
 }
@@ -13,12 +12,6 @@ if [ -z ${FRAMEWORKS_FOLDER_PATH+x} ]; then
   # If FRAMEWORKS_FOLDER_PATH is not set, then there's nowhere for us to copy
   # frameworks to, so exit 0 (signalling the script phase was successful).
   exit 0
-=======
-if [ -z ${FRAMEWORKS_FOLDER_PATH+x} ]; then
-    # If FRAMEWORKS_FOLDER_PATH is not set, then there's nowhere for us to copy
-    # frameworks to, so exit 0 (signalling the script phase was successful).
-    exit 0
->>>>>>> master
 fi
 
 echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
@@ -48,13 +41,8 @@ install_framework()
   local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
-<<<<<<< HEAD
     echo "Symlinked..."
     source="$(readlink "${source}")"
-=======
-      echo "Symlinked..."
-      source="$(readlink "${source}")"
->>>>>>> master
   fi
 
   # Use filter instead of exclude so missing patterns don't throw errors.
@@ -64,7 +52,6 @@ install_framework()
   local basename
   basename="$(basename -s .framework "$1")"
   binary="${destination}/${basename}.framework/${basename}"
-<<<<<<< HEAD
 
   if ! [ -r "$binary" ]; then
     binary="${destination}/${basename}"
@@ -72,10 +59,6 @@ install_framework()
     echo "Destination binary is symlinked..."
     dirname="$(dirname "${binary}")"
     binary="${dirname}/$(readlink "${binary}")"
-=======
-  if ! [ -r "$binary" ]; then
-    binary="${destination}/${basename}"
->>>>>>> master
   fi
 
   # Strip invalid architectures so "fat" simulator / device frameworks work on device
@@ -89,11 +72,7 @@ install_framework()
   # Embed linked Swift runtime libraries. No longer necessary as of Xcode 7.
   if [ "${XCODE_VERSION_MAJOR}" -lt 7 ]; then
     local swift_runtime_libs
-<<<<<<< HEAD
     swift_runtime_libs=$(xcrun otool -LX "$binary" | grep --color=never @rpath/libswift | sed -E s/@rpath\\/\(.+dylib\).*/\\1/g | uniq -u)
-=======
-    swift_runtime_libs=$(xcrun otool -LX "$binary" | grep --color=never @rpath/libswift | sed -E s/@rpath\\/\(.+dylib\).*/\\1/g | uniq -u  && exit ${PIPESTATUS[0]})
->>>>>>> master
     for lib in $swift_runtime_libs; do
       echo "rsync -auv \"${SWIFT_STDLIB_PATH}/${lib}\" \"${destination}\""
       rsync -auv "${SWIFT_STDLIB_PATH}/${lib}" "${destination}"
@@ -132,13 +111,8 @@ install_dsym() {
 
 # Signs a framework with the provided identity
 code_sign_if_enabled() {
-<<<<<<< HEAD
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY:-}" -a "${CODE_SIGNING_REQUIRED:-}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identity
-=======
-  if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED:-}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
-    # Use the current code_sign_identitiy
->>>>>>> master
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
     local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS:-} --preserve-metadata=identifier,entitlements '$1'"
 
@@ -167,11 +141,7 @@ strip_invalid_archs() {
   for arch in $binary_archs; do
     if ! [[ "${ARCHS}" == *"$arch"* ]]; then
       # Strip non-valid architectures in-place
-<<<<<<< HEAD
       lipo -remove "$arch" -output "$binary" "$binary"
-=======
-      lipo -remove "$arch" -output "$binary" "$binary" || exit 1
->>>>>>> master
       stripped="$stripped $arch"
     fi
   done
@@ -183,12 +153,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Koyomi/Koyomi.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Koyomi/Koyomi.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

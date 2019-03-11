@@ -1,17 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Koyomi"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Koyomi" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-<<<<<<< HEAD
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Koyomi/Koyomi.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Koyomi/Koyomi.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "CoreGraphics" -framework "Foundation" -framework "IQKeyboardManagerSwift" -framework "Koyomi" -framework "QuartzCore" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CoreGraphics" -framework "Foundation" -framework "IQKeyboardManagerSwift" -framework "Koyomi" -framework "QuartzCore" -framework "SwiftyJSON" -framework "UIKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
-=======
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Koyomi/Koyomi.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "IQKeyboardManagerSwift" -framework "Koyomi"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
->>>>>>> master
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

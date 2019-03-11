@@ -7,7 +7,8 @@ target 'Flight' do
   
   pod 'Koyomi'
   pod 'IQKeyboardManagerSwift'
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   # Pods for Flight
 

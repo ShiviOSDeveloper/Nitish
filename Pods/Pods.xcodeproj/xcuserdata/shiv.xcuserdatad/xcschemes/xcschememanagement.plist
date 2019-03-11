@@ -4,71 +4,57 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-<<<<<<< HEAD
-		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Koyomi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Flight.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-FlightTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-FlightUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-=======
-		<key>IQKeyboardManagerSwift.xcscheme_^#shared#^_</key>
-		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>5</integer>
 		</dict>
-		<key>Koyomi.xcscheme_^#shared#^_</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Pods-Flight.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Pods-FlightTests.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>Pods-FlightUITests.xcscheme_^#shared#^_</key>
-		<dict>
->>>>>>> master
-			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>6</integer>
 		</dict>
 	</dict>
-<<<<<<< HEAD
 	<key>SuppressBuildableAutocreation</key>
 	<dict/>
-=======
->>>>>>> master
 </dict>
 </plist>
