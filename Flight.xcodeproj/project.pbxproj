@@ -18,6 +18,7 @@
 		7704CD3922355426000AFCE3 /* HotelSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3622355426000AFCE3 /* HotelSearchViewController.swift */; };
 		7704CD3A22355426000AFCE3 /* HotelSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3722355426000AFCE3 /* HotelSearchView.swift */; };
 		7704CD3C22355574000AFCE3 /* CalanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3B22355574000AFCE3 /* CalanderViewController.swift */; };
+		7704CD3E2235742E000AFCE3 /* AllPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3D2235742E000AFCE3 /* AllPackages.swift */; };
 		772ED93C2231764A00D0E4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772ED93B2231764A00D0E4D4 /* AppDelegate.swift */; };
 		772ED93E2231764A00D0E4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772ED93D2231764A00D0E4D4 /* ViewController.swift */; };
 		772ED9412231764A00D0E4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772ED93F2231764A00D0E4D4 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		7704CD3622355426000AFCE3 /* HotelSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchViewController.swift; sourceTree = "<group>"; };
 		7704CD3722355426000AFCE3 /* HotelSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchView.swift; sourceTree = "<group>"; };
 		7704CD3B22355574000AFCE3 /* CalanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalanderViewController.swift; sourceTree = "<group>"; };
+		7704CD3D2235742E000AFCE3 /* AllPackages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPackages.swift; sourceTree = "<group>"; };
 		772ED9382231764A00D0E4D4 /* Flight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772ED93B2231764A00D0E4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772ED93D2231764A00D0E4D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7704CD30223546D7000AFCE3 /* MyPlans_VC.swift */,
+				7704CD3D2235742E000AFCE3 /* AllPackages.swift */,
 			);
 			path = MyPlans;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				7704CD3922355426000AFCE3 /* HotelSearchViewController.swift in Sources */,
 				7704CD3822355426000AFCE3 /* HotelSearchModel.swift in Sources */,
 				77DF53DB2233F109007583FD /* SignUP_VC.swift in Sources */,
+				7704CD3E2235742E000AFCE3 /* AllPackages.swift in Sources */,
 				772ED97322318BCA00D0E4D4 /* Home_VC.swift in Sources */,
 				772ED9442231764A00D0E4D4 /* Demo.xcdatamodeld in Sources */,
 				7704CD3A22355426000AFCE3 /* HotelSearchView.swift in Sources */,
