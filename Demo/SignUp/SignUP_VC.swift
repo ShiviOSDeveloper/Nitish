@@ -32,6 +32,7 @@ class SignUP_VC: UIViewController,UITextFieldDelegate {
     
     @IBAction func btnSignUp(_ sender: Any)
     {
+         myProfile.isLogin = false
         if(self.txtUserName.text?.isEmpty)!
         {
            
@@ -54,14 +55,55 @@ class SignUP_VC: UIViewController,UITextFieldDelegate {
             }
             else
             {
+                let hud = MBProgressHUD.showAdded(to: self.view, animated: false)
+                hud.label.text = "Loading"
+                hud.mode = .annularDeterminate
                 let strURL = baseUrl + CreateuserUrl+"?" + "username=\(txtUserName.text!)&Email=\(txtEmail.text!)&password=\(txtPwd.text!)"
                 let header = ["Content-Type":"application/json; charset=utf-8"]
                 AFWrapper.requestPOSTURL(strURL, params: nil , headers: header , success:  {
                     (JSONResponse) -> Void in
                     print(JSONResponse)
+                    if JSONResponse.dictionary?.count ?? 0>0
+                    {
+                        print("Yes, it's a Dictionary")
+                        let dict = JSONResponse.dictionary
+                        print(dict?["Message"] ?? "")
+                        let msg = dict?["Message"] ?? ""
+                        
+                        self.alert(message: msg.string ?? "", title: "Sign Up")
+                    }
+                    else
+                    {
+                        if(JSONResponse).boolValue
+                        {
+                            
+                            myProfile.Name = self.txtUserName.text!
+                            myProfile.Email = self.txtEmail.text!
+                            myProfile.Password = self.txtPwd.text!
+                            myProfile.isLogin = true
+                            print("Success SignUp")
+                            self.alert(message: "Sign Up Successfully", title: "Sign Up")
+                            
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                        else
+                        {
+                            print("Error in Success SignUp")
+                            self.alert(message: "Failed to Sign Up", title: "Sign Up")
+
+                        }
+                    }
+
+                    hud.hide(animated: true)
+
+                   
+                 
+                    
                 }) {
                     (error) -> Void in
                     print(error)
+                    hud.hide(animated: true)
+
                 }
             }
         }

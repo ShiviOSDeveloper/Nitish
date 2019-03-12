@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var myProfile = MyProfile()
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

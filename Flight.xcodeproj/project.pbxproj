@@ -11,6 +11,7 @@
 		1D17F3544A98039D9A1C0ACD /* Pods_FlightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBFEB3C7C1EC51FA89018C9 /* Pods_FlightTests.framework */; };
 		58065D6B2236EAD700BE338F /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58065D6A2236EAD700BE338F /* AFWrapper.swift */; };
 		58065D6D2236ED6600BE338F /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58065D6C2236ED6600BE338F /* constant.swift */; };
+		58A052EF223823340098BB91 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A052EE223823340098BB91 /* MyProfile.swift */; };
 		58C6A40F223572FC00C9744E /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */; };
 		58C6A4112235738600C9744E /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A4102235738600C9744E /* FlightSearchModel.swift */; };
 		58C6A4152235740400C9744E /* FlightSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A4142235740400C9744E /* FlightSearchView.swift */; };
@@ -60,6 +61,8 @@
 		3803921BF7DAC137A273E681 /* Pods-FlightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightUITests/Pods-FlightUITests.release.xcconfig"; sourceTree = "<group>"; };
 		58065D6A2236EAD700BE338F /* AFWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
 		58065D6C2236ED6600BE338F /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		58A052EE223823340098BB91 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
+		58A052F022382D140098BB91 /* Flight-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flight-Bridge-Header.h"; sourceTree = "<group>"; };
 		58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
 		58C6A4102235738600C9744E /* FlightSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
 		58C6A4142235740400C9744E /* FlightSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchView.swift; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 		772ED92F2231764A00D0E4D4 = {
 			isa = PBXGroup;
 			children = (
+				58A052F022382D140098BB91 /* Flight-Bridge-Header.h */,
 				58065D692236EAAC00BE338F /* API */,
 				772ED93A2231764A00D0E4D4 /* Demo */,
 				772ED9522231764C00D0E4D4 /* DemoTests */,
@@ -223,6 +227,7 @@
 				772ED96F22318B8600D0E4D4 /* Home */,
 				772ED93B2231764A00D0E4D4 /* AppDelegate.swift */,
 				772ED93D2231764A00D0E4D4 /* ViewController.swift */,
+				58A052EE223823340098BB91 /* MyProfile.swift */,
 				772ED93F2231764A00D0E4D4 /* Main.storyboard */,
 				772ED9452231764C00D0E4D4 /* Assets.xcassets */,
 				772ED9472231764C00D0E4D4 /* LaunchScreen.storyboard */,
@@ -419,6 +424,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Koyomi/Koyomi.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -426,6 +432,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koyomi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C6A4152235740400C9744E /* FlightSearchView.swift in Sources */,
+				58A052EF223823340098BB91 /* MyProfile.swift in Sources */,
 				58065D6D2236ED6600BE338F /* constant.swift in Sources */,
 				7704CD3C22355574000AFCE3 /* CalanderViewController.swift in Sources */,
 				58065D6B2236EAD700BE338F /* AFWrapper.swift in Sources */,
@@ -698,6 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nitish.app.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Flight-Bridge-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -716,6 +725,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nitish.app.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Flight-Bridge-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

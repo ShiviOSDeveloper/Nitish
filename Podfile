@@ -9,6 +9,7 @@ target 'Flight' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'MBProgressHUD', '~> 1.1.0'
 
   # Pods for Flight
 

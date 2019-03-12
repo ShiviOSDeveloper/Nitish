@@ -30,6 +30,8 @@ class Login_VC: UIViewController,UITextFieldDelegate {
 
     @IBAction func login(_ sender: Any)
     {
+        
+        
         if (self.txtFldUserName.text?.isEmpty)!
         {
             self.alert(message: "Enter user name", title: "Oops")
@@ -40,14 +42,48 @@ class Login_VC: UIViewController,UITextFieldDelegate {
         }
         else
         {
-            let strURL = baseUrl + loginUrl
-            let loginParam = ["Email":txtFldUserName.text,"password":txtFldPwd.text]
-            AFWrapper.requestPOSTURL(strURL, params: loginParam as [String : AnyObject], headers: nil, success:  {
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: false)
+            hud.label.text = "Loading"
+            hud.mode = .annularDeterminate
+            
+            let strURL = baseUrl + loginUrl+"?" + "Email=\(txtFldUserName.text!)&password=\(txtFldPwd.text!)"
+            let header = ["Content-Type":"application/json; charset=utf-8"]
+            
+            AFWrapper.requestPOSTURL(strURL, params: nil, headers: header, success:  {
                 (JSONResponse) -> Void in
+                
+                
                 print(JSONResponse)
+                
+                let dict = JSONResponse.dictionary
+                print(dict?["Message"] ?? "")
+                let msg = dict?["Message"] ?? ""
+                
+                if msg != ""
+                {
+                    self.alert(message: msg.string ?? "", title: "Sign In")
+
+                }
+                else
+                {
+                    myProfile.Name = dict?["USERNAME"]?.string
+                    myProfile.Email = dict?["EMAIL"]?.string
+                    myProfile.Password = self.txtFldPwd.text!
+                    myProfile.CRATE_DATE = dict?["CRATE_DATE"]?.string
+                    myProfile.Id = dict?["Id"]?.int
+                    myProfile.isLogin = true
+                    self.alert(message:"Sign In Successfully!", title: "Sign In")
+                    
+                    self.navigationController?.popToRootViewController(animated: true)
+
+                }
+               
+               hud.hide(animated: true)
             }) {
                 (error) -> Void in
                 print(error)
+                hud.hide(animated: true)
+
             }
         }
     }
