@@ -16,10 +16,14 @@ class Home_VC:UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     @IBOutlet weak var collVwHome: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.title = "Home"
         // Do any additional setup after loading the view.
         
-       
+        
+        let imageVw = UIImageView(image: UIImage(named: "logo-text"))
+       // imageVw.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
+        
+       self.navigationItem.titleView = imageVw
 
     }
     

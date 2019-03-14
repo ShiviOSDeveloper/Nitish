@@ -22,6 +22,7 @@
 		7704CD3A22355426000AFCE3 /* HotelSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3722355426000AFCE3 /* HotelSearchView.swift */; };
 		7704CD3C22355574000AFCE3 /* CalanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3B22355574000AFCE3 /* CalanderViewController.swift */; };
 		7704CD3E2235742E000AFCE3 /* AllPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3D2235742E000AFCE3 /* AllPackages.swift */; };
+		77139B37223978340096723B /* CominSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77139B36223978340096723B /* CominSoonViewController.swift */; };
 		772ED93C2231764A00D0E4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772ED93B2231764A00D0E4D4 /* AppDelegate.swift */; };
 		772ED93E2231764A00D0E4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772ED93D2231764A00D0E4D4 /* ViewController.swift */; };
 		772ED9412231764A00D0E4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772ED93F2231764A00D0E4D4 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		7704CD3722355426000AFCE3 /* HotelSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchView.swift; sourceTree = "<group>"; };
 		7704CD3B22355574000AFCE3 /* CalanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalanderViewController.swift; sourceTree = "<group>"; };
 		7704CD3D2235742E000AFCE3 /* AllPackages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPackages.swift; sourceTree = "<group>"; };
+		77139B36223978340096723B /* CominSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CominSoonViewController.swift; sourceTree = "<group>"; };
 		772ED9382231764A00D0E4D4 /* Flight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772ED93B2231764A00D0E4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772ED93D2231764A00D0E4D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,12 +229,12 @@
 				772ED96F22318B8600D0E4D4 /* Home */,
 				772ED93B2231764A00D0E4D4 /* AppDelegate.swift */,
 				772ED93D2231764A00D0E4D4 /* ViewController.swift */,
-				58A052EE223823340098BB91 /* MyProfile.swift */,
 				772ED93F2231764A00D0E4D4 /* Main.storyboard */,
 				772ED9452231764C00D0E4D4 /* Assets.xcassets */,
 				772ED9472231764C00D0E4D4 /* LaunchScreen.storyboard */,
 				772ED94A2231764C00D0E4D4 /* Info.plist */,
 				772ED9422231764A00D0E4D4 /* Demo.xcdatamodeld */,
+				77139B36223978340096723B /* CominSoonViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -276,6 +278,7 @@
 		77C9A3752232AF8300C65C0C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				58A052EE223823340098BB91 /* MyProfile.swift */,
 				77C9A3762232AF9E00C65C0C /* Login_VC.swift */,
 				779A49722232EEE1002AEAA3 /* ForgotPwd_VC.swift */,
 				77DF53DA2233F109007583FD /* SignUP_VC.swift */,
@@ -504,6 +507,7 @@
 				58C6A4152235740400C9744E /* FlightSearchView.swift in Sources */,
 				58A052EF223823340098BB91 /* MyProfile.swift in Sources */,
 				58065D6D2236ED6600BE338F /* constant.swift in Sources */,
+				77139B37223978340096723B /* CominSoonViewController.swift in Sources */,
 				7704CD3C22355574000AFCE3 /* CalanderViewController.swift in Sources */,
 				58065D6B2236EAD700BE338F /* AFWrapper.swift in Sources */,
 				7704CD3922355426000AFCE3 /* HotelSearchViewController.swift in Sources */,
@@ -698,14 +702,17 @@
 			baseConfigurationReference = A038F05E4ABE7B188A76DABF /* Pods-Flight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3LL8ZJR3D3;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nitish.app.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = notification.push.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = TestPush;
 				SWIFT_OBJC_BRIDGING_HEADER = "Flight-Bridge-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -717,14 +724,17 @@
 			baseConfigurationReference = CA680C864010030F97C88837 /* Pods-Flight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3LL8ZJR3D3;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nitish.app.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = notification.push.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = TestPush;
 				SWIFT_OBJC_BRIDGING_HEADER = "Flight-Bridge-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

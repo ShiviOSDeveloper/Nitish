@@ -17,7 +17,7 @@ class MyPlans_VC: UIViewController,UITableViewDataSource,UITableViewDelegate
     let MyPlans = ["Home","Packages", "Seight Seeing","Hotels","Events","Profile","Contacts Us"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "My Plans"
          tblMyPlans.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }

@@ -13,6 +13,8 @@ class AllPackages: UITableViewController {
    let arrAllPackages = ["All BookingTour","Tour Package Booking","Hotel Booking","Car Rentals Booking","Flight Booking","Slider Booking","All Package","Family Package","Honeymoon Package","Group Package","WeekEnd Package","Regular Package","Custom Package"]
 
     override func viewDidLoad() {
+        
+        self.title = "Packeges"
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
@@ -34,6 +36,24 @@ class AllPackages: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        let selectedPackege = arrAllPackages[indexPath.row]
+        
+        switch selectedPackege {
+        case "Hotel Booking":
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "HotelSearchViewController") as! HotelSearchViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            break;
+        case "Flight Booking":
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "FlightSearchViewController") as! FlightSearchViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            break;
+            
+            
+        default:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CominSoonViewController") as! CominSoonViewController
+            vc.title = selectedPackege
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     /*

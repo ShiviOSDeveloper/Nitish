@@ -11,7 +11,8 @@ import UIKit
 class Menu_VC: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
     var menu = ["My Trips","My Plans","My Reviews","My Chats","My Qna","Payments","Offers and Promotions","Refer and Earn","Scan QR code","Share","Help"]
-    
+     var menuImages = ["trip","plan","review","chat","qna","payment","offer","refer","scan","share","help"]
+    // var menu = ["My Trips","My Plans","My Reviews","My Chats","My Qna","Payments","Offers and Promotions","Refer and Earn","Scan QR code","Share","Help"]
     let cellReuseIdentifier = "cell"
 
     @IBOutlet weak var lblName: UILabel!
@@ -21,7 +22,7 @@ class Menu_VC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+self.title = "Menus"
         // Do any additional setup after loading the view.
          tblMenu.tableFooterView = UIView()
     }
@@ -40,10 +41,10 @@ class Menu_VC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         }
 
         
-        let image : UIImage = UIImage(named: "trips")!
+        let image : UIImage = UIImage(named: menuImages[indexPath.row])!
       
         cell!.imageView!.image = image
-
+        cell!.imageView?.contentMode = .scaleAspectFit
         cell?.textLabel?.text = self.menu[indexPath.row]
         
         return cell!
