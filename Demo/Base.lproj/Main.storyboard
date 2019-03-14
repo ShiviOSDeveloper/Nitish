@@ -547,7 +547,7 @@
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="Qq8-Yu-X7R" kind="show" id="ofp-r8-FxS"/>
+                                                                    <action selector="BusSearchClk:" destination="9ly-ql-Htw" eventType="touchUpInside" id="8ro-P7-DOt"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bus" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-oI-OPH">
@@ -1322,7 +1322,7 @@
                                                 <rect key="frame" x="15" y="179" width="345" height="35"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9a8-RI-lcA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="7x8-SS-Mjb"/>
                                                         </constraints>
@@ -1334,7 +1334,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Guest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0m-HZ-GTX">
-                                                        <rect key="frame" x="195" y="0.0" width="150" height="35"/>
+                                                        <rect key="frame" x="298.5" y="0.0" width="46.5" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="5NV-KW-zrg"/>
                                                             <constraint firstAttribute="height" constant="35" id="Tjn-9q-QoQ"/>
@@ -1422,7 +1422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jha-uM-MnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2538" y="-2239"/>
+            <point key="canvasLocation" x="3154" y="-2250"/>
         </scene>
         <!--Calander View Controller-->
         <scene sceneID="RBA-LE-R1F">

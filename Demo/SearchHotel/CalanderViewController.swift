@@ -43,6 +43,11 @@ class CalanderViewController: UIViewController,KoyomiDelegate {
             let date = formatter.date(from: Flight_SearchModel.returnDate)
             koyomi.select(date: date!)
             break
+        case "departureDateBus":
+            let date = formatter.date(from: Bus_SearchModel.departureDate)
+            koyomi.select(date: date!)
+            break
+            
         default: break
             
             
@@ -75,7 +80,13 @@ class CalanderViewController: UIViewController,KoyomiDelegate {
             Flight_SearchModel.returnDate = myString
             self.navigationController?.popViewController(animated: false)
             break
-        default: break
+        case "departureDateBus":
+            Bus_SearchModel.departureDate = myString
+            self.navigationController?.popViewController(animated: false)
+            break
+        default:
+               self.navigationController?.popViewController(animated: false)
+            break
             
             
         }

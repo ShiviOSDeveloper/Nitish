@@ -13,6 +13,11 @@ class Home_VC:UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
    
     
 
+    @IBAction func BusSearchClk(_ sender: Any) {
+        
+        let vc = BusSearchViewController.init(nibName: "BusSearchViewController", bundle: nil) 
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @IBOutlet weak var collVwHome: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()

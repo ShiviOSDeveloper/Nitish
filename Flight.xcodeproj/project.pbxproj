@@ -15,6 +15,9 @@
 		58C6A40F223572FC00C9744E /* FlightSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */; };
 		58C6A4112235738600C9744E /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A4102235738600C9744E /* FlightSearchModel.swift */; };
 		58C6A4152235740400C9744E /* FlightSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6A4142235740400C9744E /* FlightSearchView.swift */; };
+		58E51985223AB9FD00B79858 /* BusSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E51983223AB9FD00B79858 /* BusSearchViewController.swift */; };
+		58E51986223AB9FD00B79858 /* BusSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E51984223AB9FD00B79858 /* BusSearchViewController.xib */; };
+		58E51988223AC5DE00B79858 /* BusSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E51987223AC5DE00B79858 /* BusSearchModel.swift */; };
 		7704CD31223546D7000AFCE3 /* MyPlans_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD30223546D7000AFCE3 /* MyPlans_VC.swift */; };
 		7704CD332235473B000AFCE3 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD322235473B000AFCE3 /* MenuCell.swift */; };
 		7704CD3822355426000AFCE3 /* HotelSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704CD3522355426000AFCE3 /* HotelSearchModel.swift */; };
@@ -67,6 +70,9 @@
 		58C6A40E223572FC00C9744E /* FlightSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewController.swift; sourceTree = "<group>"; };
 		58C6A4102235738600C9744E /* FlightSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
 		58C6A4142235740400C9744E /* FlightSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchView.swift; sourceTree = "<group>"; };
+		58E51983223AB9FD00B79858 /* BusSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusSearchViewController.swift; sourceTree = "<group>"; };
+		58E51984223AB9FD00B79858 /* BusSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusSearchViewController.xib; sourceTree = "<group>"; };
+		58E51987223AC5DE00B79858 /* BusSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusSearchModel.swift; sourceTree = "<group>"; };
 		7704CD30223546D7000AFCE3 /* MyPlans_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlans_VC.swift; sourceTree = "<group>"; };
 		7704CD322235473B000AFCE3 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		7704CD3522355426000AFCE3 /* HotelSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchModel.swift; sourceTree = "<group>"; };
@@ -174,6 +180,16 @@
 			path = FlightSearch;
 			sourceTree = "<group>";
 		};
+		58E51982223AB9D900B79858 /* BusSearch */ = {
+			isa = PBXGroup;
+			children = (
+				58E51983223AB9FD00B79858 /* BusSearchViewController.swift */,
+				58E51987223AC5DE00B79858 /* BusSearchModel.swift */,
+				58E51984223AB9FD00B79858 /* BusSearchViewController.xib */,
+			);
+			path = BusSearch;
+			sourceTree = "<group>";
+		};
 		7704CD2F223545DD000AFCE3 /* MyPlans */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +237,7 @@
 		772ED93A2231764A00D0E4D4 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				58E51982223AB9D900B79858 /* BusSearch */,
 				58C6A40D223572DE00C9744E /* FlightSearch */,
 				7704CD342235540E000AFCE3 /* SearchHotel */,
 				7704CD2F223545DD000AFCE3 /* MyPlans */,
@@ -397,6 +414,7 @@
 				772ED9492231764C00D0E4D4 /* LaunchScreen.storyboard in Resources */,
 				772ED9462231764C00D0E4D4 /* Assets.xcassets in Resources */,
 				772ED9412231764A00D0E4D4 /* Main.storyboard in Resources */,
+				58E51986223AB9FD00B79858 /* BusSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +537,9 @@
 				7704CD3A22355426000AFCE3 /* HotelSearchView.swift in Sources */,
 				77C9A3772232AF9E00C65C0C /* Login_VC.swift in Sources */,
 				772ED98022319A3F00D0E4D4 /* Menu_VC.swift in Sources */,
+				58E51985223AB9FD00B79858 /* BusSearchViewController.swift in Sources */,
 				7704CD332235473B000AFCE3 /* MenuCell.swift in Sources */,
+				58E51988223AC5DE00B79858 /* BusSearchModel.swift in Sources */,
 				779A49732232EEE1002AEAA3 /* ForgotPwd_VC.swift in Sources */,
 				58C6A4112235738600C9744E /* FlightSearchModel.swift in Sources */,
 				772ED93E2231764A00D0E4D4 /* ViewController.swift in Sources */,
