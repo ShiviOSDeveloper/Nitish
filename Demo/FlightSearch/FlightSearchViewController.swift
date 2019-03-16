@@ -81,9 +81,21 @@ class FlightSearchViewController: UIViewController {
 
     @IBAction func searchFlightClk(_ sender: Any) {
         
-      //  if (Flight_SearchModel.ac_departure != nil)
-       // {
-               let url =  "https://secure.yatra.com/air-service/dbe0e9dc-38f0-4c67-a8b6-604f919241fe/search?type=R&viewName=normal&flexi=0&noOfSegments=2&origin=DEL&originCountry=IN&destination=BOM&destinationCountry=IN&flight_depart_date=02/04/2019&arrivalDate=20/04/2019&ADT=1&CHD=0&INF=0&class=Economy&hb=0&source=fresco-home&booking-type=official"
+        Flight_SearchModel.travellerClass = flightSearchView.classTxtFld?.text
+        Flight_SearchModel.traveller = flightSearchView.travellerTxtFld?.text
+        if (Flight_SearchModel.ac_departure != nil)
+       {
+        //let url =  "https://secure.yatra.com/air-service/dbe0e9dc-38f0-4c67-a8b6-604f919241fe/search?type=R&viewName=normal&flexi=0&noOfSegments=2&origin=DEL&originCountry=IN&destination=BOM&destinationCountry=IN&flight_depart_date=02/04/2019&arrivalDate=20/04/2019&ADT=1&CHD=0&INF=0&class=Economy&hb=0&source=fresco-home&booking-type=official"
+        
+        if (Flight_SearchModel.travellerClass == nil)
+        {
+            alert(message: "Please enter traveller class", title: "OOPS")
+            return
+        }
+       
+         let url = "https://secure.yatra.com/air-service/\(Flight_SearchModel.AirTo_autoSuggestModel.id!)/search?type=R&viewName=normal&flexi=0&noOfSegments=2&origin=\(Flight_SearchModel.ac_departure!)&originCountry=IN&destination=\(Flight_SearchModel.ac_destination!)&destinationCountry=IN&flight_depart_date=\(Flight_SearchModel.departureDate!)&arrivalDate=\(Flight_SearchModel.returnDate!)&ADT=1&CHD=0&INF=0&class=\(Flight_SearchModel.travellerClass!)&hb=0&source=fresco-home&booking-type=official"
+        
+        //origin=DEL&originCountry=IN&destination=BOM&destinationCountry=IN&flight_depart_date=02/04/2019&arrivalDate=20/04/2019&ADT=1&CHD=0&INF=0&class=Economy&hb=0&source=fresco-home&booking-type=official"
         
         
                 let hud = MBProgressHUD.showAdded(to: self.view, animated: false)
@@ -113,9 +125,12 @@ class FlightSearchViewController: UIViewController {
                     resultData.fltSchedule.scid = fltSchedule?["scid"]?.string
                     
                     
-                  //  let originDestinationDate = Flight_SearchModel.ac_departure+Flight_SearchModel.ac_destination+"20190420"
+                    
+                    let originDestinationDate = Flight_SearchModel.ac_departure+Flight_SearchModel.ac_destination + self.SouceDestinationDDMMYYFormat(date:(self.flightSearchView.departureDateTxtFld?.text!)!)
 
-                    let originDestinationDate = "BOMDEL20190420"
+                    
+                    
+                    //let originDestinationDate = "BOMDEL20190420"
                     var originDestinationArray = fltSchedule![originDestinationDate]!.array!
                     
                     for i in (0..<originDestinationArray.count)
@@ -132,7 +147,7 @@ class FlightSearchViewController: UIViewController {
                          ODMod.classtype = ODDict?["classtype"].string
                          ODMod.ts = ODDict?["ts"].string
                          ODMod.tdu = ODDict?["tdu"].string
-                        
+            
                         
                          var FSDict = ODDict?["FS"].array?[0]
                       
@@ -183,9 +198,21 @@ class FlightSearchViewController: UIViewController {
         
                 }
         
-     //   }
+       }
         
         
     }
     
+    
+    func SouceDestinationDDMMYYFormat(date:String)->String
+    {
+        //20190420
+        let datefromater = DateFormatter.init()
+        datefromater.dateFormat = "dd/mm/yyyy"
+        let date = datefromater.date(from: date)
+        datefromater.dateFormat = "yyyymmdd"
+        let formattedDate = datefromater.string(from: date!)
+        return formattedDate
+        
+    }
 }

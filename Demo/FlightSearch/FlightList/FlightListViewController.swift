@@ -18,6 +18,7 @@ class FlightListViewController: UIViewController ,UITableViewDelegate,UITableVie
         super.viewDidLoad()
         filghtTblVw.register(UINib(nibName: "FlightListCell", bundle: nil), forCellReuseIdentifier: "FlightListCell")
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,7 +40,7 @@ class FlightListViewController: UIViewController ,UITableViewDelegate,UITableVie
         cell.travellTime.text = self.timeFormatter(time: FS.du!)
         cell.classType.text = FS.classtype
         cell.mealType.text = FS.ml
-        cell.price.text = "$" + String(Int.random(in: 1500..<4000))
+        cell.price.text = "₹ " + String(Int.random(in: 1500..<4000))
         cell.stops.text = "\(OD.ts!) Stops"
         return cell;
     }

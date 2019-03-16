@@ -443,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmY-9J-mQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3189.5999999999999" y="-2320.3898050974512"/>
+            <point key="canvasLocation" x="3354" y="-2332"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="jFU-k1-G1m">
@@ -1322,7 +1322,7 @@
                                                 <rect key="frame" x="15" y="179" width="345" height="35"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9a8-RI-lcA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="7x8-SS-Mjb"/>
                                                         </constraints>
@@ -1334,7 +1334,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Guest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0m-HZ-GTX">
-                                                        <rect key="frame" x="298.5" y="0.0" width="46.5" height="35"/>
+                                                        <rect key="frame" x="195" y="0.0" width="150" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="5NV-KW-zrg"/>
                                                             <constraint firstAttribute="height" constant="35" id="Tjn-9q-QoQ"/>
@@ -1422,7 +1422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jha-uM-MnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3154" y="-2250"/>
+            <point key="canvasLocation" x="2642" y="-2332"/>
         </scene>
         <!--Calander View Controller-->
         <scene sceneID="RBA-LE-R1F">
@@ -1726,7 +1726,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="VF3-K7-Hxz">
                                                 <rect key="frame" x="14" y="201" width="346" height="35"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Adults" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8e-8f-kyt">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="line" placeholder="Adults" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8e-8f-kyt">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="D7Q-jm-IS9"/>
@@ -1736,7 +1736,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Economy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9N5-K7-cms">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Economy" borderStyle="line" placeholder="Economy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9N5-K7-cms">
                                                         <rect key="frame" x="196" y="0.0" width="150" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="5Rg-2I-nE5"/>

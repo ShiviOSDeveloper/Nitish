@@ -18,7 +18,7 @@ class AutoSuggestViewController: UIViewController,UITableViewDelegate,UITableVie
         super.viewDidLoad()
         
        autoSuggestTblVw.tableFooterView = UIView()
-
+       searchBar.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
 
@@ -64,15 +64,14 @@ class AutoSuggestViewController: UIViewController,UITableViewDelegate,UITableVie
         hud.label.text = "Loading"
         hud.mode = .annularDeterminate
 
-         Flight_SearchModel.AirFrom_autoSuggestModel = AirautoSuggestModel()
-         Flight_SearchModel.AirTo_autoSuggestModel = AirautoSuggestModel()
-        
+
         AFWrapper.requestGETURL(strURL, success:  {
             (JSONResponse) -> Void in
             
             
             if (self.isFrom == "From")
             {
+                Flight_SearchModel.AirFrom_autoSuggestModel = AirautoSuggestModel()
 
                 let Air_autoSuggestModelTemp = Flight_SearchModel.AirFrom_autoSuggestModel
                 Air_autoSuggestModelTemp.id = JSONResponse["id"].string
@@ -116,6 +115,8 @@ class AutoSuggestViewController: UIViewController,UITableViewDelegate,UITableVie
             }
             else
             {
+                Flight_SearchModel.AirTo_autoSuggestModel = AirautoSuggestModel()
+
                 let Air_autoSuggestModelTemp = Flight_SearchModel.AirTo_autoSuggestModel
                 Air_autoSuggestModelTemp.id = JSONResponse["id"].string
                 Air_autoSuggestModelTemp.key = JSONResponse["key"].string
