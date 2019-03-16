@@ -14,10 +14,15 @@ class FlightSearchModel {
     var destination:String!
     var departureDate:String!
     var returnDate:String!
-
     var traveller:String!
     var travellerClass:String!
-  
+    var ac_departure:String!
+    var ac_destination:String!
+
+    var AirFrom_autoSuggestModel = AirautoSuggestModel()
+    var AirTo_autoSuggestModel = AirautoSuggestModel()
+    
+    
     init() {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
