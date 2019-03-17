@@ -171,6 +171,10 @@ class AutoSuggestViewController: UIViewController,UITableViewDelegate,UITableVie
         
         if (self.isFrom == "From")
          {
+            
+         Flight_SearchModel.AirFrom_autoSuggestModel.Air_PortsModel =     Flight_SearchModel.AirFrom_autoSuggestModel.Air_PortsArrayModel[indexPath.row]
+
+            
             Flight_SearchModel.departure = Flight_SearchModel.AirFrom_autoSuggestModel.Air_PortsArrayModel[indexPath.row].city
             Flight_SearchModel.ac_departure = Flight_SearchModel.AirFrom_autoSuggestModel.Air_PortsArrayModel[indexPath.row].Flight_ArrayModel[0].ac
             
@@ -178,6 +182,8 @@ class AutoSuggestViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         else
         {
+            Flight_SearchModel.AirTo_autoSuggestModel.Air_PortsModel =     Flight_SearchModel.AirTo_autoSuggestModel.Air_PortsArrayModel[indexPath.row]
+
             Flight_SearchModel.destination = Flight_SearchModel.AirTo_autoSuggestModel.Air_PortsArrayModel[indexPath.row].city
             Flight_SearchModel.ac_destination = Flight_SearchModel.AirTo_autoSuggestModel.Air_PortsArrayModel[indexPath.row].Flight_ArrayModel[0].ac
         }

@@ -13,7 +13,8 @@ class AirautoSuggestModel: NSObject {
     var id:String!
     var key:String!
     var Air_PortsArrayModel = [AirPortsModel]()
-    
+    var Air_PortsModel = AirPortsModel()
+
     
     
 }

@@ -17,7 +17,7 @@ class FlightListViewController: UIViewController ,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         filghtTblVw.register(UINib(nibName: "FlightListCell", bundle: nil), forCellReuseIdentifier: "FlightListCell")
-
+         self.title = "Flights"
         
         // Do any additional setup after loading the view.
     }
@@ -35,12 +35,30 @@ class FlightListViewController: UIViewController ,UITableViewDelegate,UITableVie
         
         let OD = Flight_ListModel.resultData[0].fltSchedule.flt_originDestination[indexPath.row].OD[0]
         let FS = Flight_ListModel.resultData[0].fltSchedule.flt_originDestination[indexPath.row].OD[0].FS[0]
+        
+        let fareDetail = Flight_ListModel.resultData[0].fltSchedule.flt_originDestination[indexPath.row].fareDetail_ID_originDestination
+
         cell.dTime.text = FS.dd
         cell.aTime.text = FS.ad
         cell.travellTime.text = self.timeFormatter(time: FS.du!)
         cell.classType.text = FS.classtype
         cell.mealType.text = FS.ml
-        cell.price.text = "₹ " + String(Int.random(in: 1500..<4000))
+        let someString = fareDetail.OMod.ADTMod.tf!
+        if let myInteger = Int(someString) {
+            let myNumber = NSNumber(value:myInteger)
+            let formatter = NumberFormatter()
+            formatter.groupingSeparator = ","
+            formatter.numberStyle = .decimal
+            let prices = formatter.string(from: myNumber)!
+            cell.price.text = "₹\(prices)"
+        }
+           
+        else
+        {
+            cell.price.text = "₹\(fareDetail.OMod.ADTMod.tf!)"
+        }
+        
+        
         cell.stops.text = "\(OD.ts!) Stops"
         return cell;
     }

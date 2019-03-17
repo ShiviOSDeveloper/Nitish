@@ -13,7 +13,7 @@ class fareDetailsModel: NSObject {
 }
 class fareDetail_originDestinationModel: NSObject {
     var ID:String?
-    var fareDetail_ID_originDestination = [fareDetail_ID_originDestinationModel]()
+    var fareDetail_ID_originDestination = fareDetail_ID_originDestinationModel()
 }
 class fareDetail_ID_originDestinationModel: NSObject {
     var OMod = OModel()

@@ -15,6 +15,7 @@ class fltScheduleModel: NSObject {
 class flt_originDestinationModel: NSObject {
     var ID:String?
     var OD = [ODModel]()
+    var fareDetail_ID_originDestination = fareDetail_ID_originDestinationModel()
     
 }
 class ODModel: NSObject {
@@ -35,3 +36,4 @@ class FSMODEL: NSObject {
     var classtype:String?
     
 }
+
