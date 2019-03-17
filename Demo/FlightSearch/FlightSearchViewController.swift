@@ -9,15 +9,34 @@
 import UIKit
 var Flight_SearchModel = FlightSearchModel()
 var Flvart_ListModel = FlightListModel()
-class FlightSearchViewController: UIViewController {
+class FlightSearchViewController: UIViewController,UIActionSheetDelegate {
 @IBOutlet weak var flightSearchView: FlightSearchView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Search Flights"    
-        // Do any additional setup after loading the view.
+     
         
     }
-    
+   
+    @IBAction func classClk(_ sender: Any) {
+        let actionSheet = UIAlertController.init(title: "Choose Flight Class", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction.init(title: "Economy", style: UIAlertAction.Style.default, handler: { (action) in
+            self.flightSearchView.classTxtFld?.text = action.title
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Premium Economy", style: UIAlertAction.Style.default, handler: { (action) in
+            self.flightSearchView.classTxtFld?.text = action.title
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Business", style: UIAlertAction.Style.default, handler: { (action) in
+            self.flightSearchView.classTxtFld?.text = action.title
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "First Class", style: UIAlertAction.Style.default, handler: { (action) in
+            self.flightSearchView.classTxtFld?.text = action.title
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { (action) in
+        }))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
     @IBAction func checkInClk(_ sender: Any)
     {
         
